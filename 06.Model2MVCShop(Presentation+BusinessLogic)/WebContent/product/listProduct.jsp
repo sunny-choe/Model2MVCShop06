@@ -121,42 +121,42 @@ function fncGetProductList(currentPage) {
 		<td align="left">
 			<c:if test="${param.menu=='manage'}">
 					<c:choose>
-						<c:when test="${prod.proTranCode=='0'}">
+						<c:when test="${product.proTranCode=='0'}">
 							<a href="/getProduct.do?prodNo=${prod.prodNo}&menu=manage">${prod.prodName}</a>
 						</c:when>
 						<c:otherwise>
-							${prod.prodName}
+							${product.prodName}
 						</c:otherwise>
 					</c:choose>
 				</c:if>
 				<c:if test="${param.menu=='search'}">
 					<c:choose>
-						<c:when test="${prod.proTranCode=='0'}">
-							<a href="/getProduct.do?prodNo=${prod.prodNo}&menu=search">${prod.prodName}</a>
+						<c:when test="${product.proTranCode=='0'}">
+							<a href="/getProduct.do?prodNo=${product.prodNo}&menu=search">${product.prodName}</a>
 						</c:when>
 						<c:otherwise>
-							${prod.prodName}
+							${product.prodName}
 						</c:otherwise>
 					</c:choose>
 				</c:if>
 		</td>
 		<td></td>
-		<td align="left">${prod.price}</td>
+		<td align="left">${product.price}</td>
 		<td></td>
 			<c:if test="${param.menu=='manage'}">
-				<td align="left">${prod.regDate}</td>
+				<td align="left">${product.regDate}</td>
 				<td></td>
 			</c:if>	
 		<td align="left">
 			<c:if test="${param.menu=='manage'}">
 					<c:choose>
-						<c:when test="${prod.proTranCode==1}">
+						<c:when test="${product.proTranCode==1}">
 							구매완료/배송하기</a>
 						</c:when>
-						<c:when test="${prod.proTranCode==2}">
+						<c:when test="${product.proTranCode==2}">
 							배송중
 						</c:when>
-						<c:when test="${prod.proTranCode==3}">
+						<c:when test="${product.proTranCode==3}">
 							배송완료
 						</c:when>
 						<c:otherwise>
@@ -166,7 +166,7 @@ function fncGetProductList(currentPage) {
 				</c:if>
 				<c:if test="${param.menu=='search'}">
 					<c:choose>
-						<c:when test="${prod.proTranCode==0}">
+						<c:when test="${product.proTranCode==0}">
 							판매중
 						</c:when>
 						<c:otherwise>
