@@ -8,7 +8,7 @@
  	
  	
 	<resultMap id="productSelectMap" type="product">
-		<result property="prodId"		column="prod_no" 			jdbcType="INTEGER"/>
+		<result property="prodNo"		column="prod_no" 			jdbcType="INTEGER"/>
 		<result property="prodName"		column="prod_name" 			jdbcType="VARCHAR" />
 		<result property="prodDetail" 	column="prod_detail" 		jdbcType="VARCHAR" />
 		<result property="manuDate" 	column="manufacture_day" 	jdbcType="VARCHAR" />
@@ -21,7 +21,7 @@
 	<insert 	id="addProduct"		parameterType="product" >
 	 	INSERT
 		INTO product( prod_no , prod_name , prod_detail , manufacture_day , price, image_file, reg_date) 
-		VALUES	 (	'seq_product_prod_no.nextval' , #{prodName} , #{prodDetail} , #{manuDate} , 
+		VALUES	 (	seq_product_prod_no.nextval , #{prodName} , #{prodDetail:VARCHAR} , #{manuDate} , 
 							#{price:INTEGER} , #{fileName:VARCHAR} , SYSDATE )
 	 </insert>
 	 
@@ -30,7 +30,7 @@
 		SELECT
 		prod_no , prod_name , prod_detail , manufacture_day ,  price ,  image_file , reg_date 		
 		FROM product 
-		WHERE prod_no = #{value}
+		WHERE prod_no = #{prodNo}
 	 </select>
 	 
 	 <!-- SQL : UPDATE -->
@@ -43,7 +43,7 @@
 			price			= #{price},
 			image_file		= #{fileName}
 	   	</set>
-	   	WHERE prod_no = #{value}
+	   	WHERE prod_no = #{prodNo}
 	 </update>
 		 
 	<!-- SQL : SELECT LIST -->
