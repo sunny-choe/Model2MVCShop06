@@ -54,7 +54,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/addProduct.do")
-	public String addUser( @ModelAttribute("product") Product product ) throws Exception {
+	public String addProduct( @ModelAttribute("product") Product product ) throws Exception {
 
 		System.out.println("/addProduct.do");
 		//Business Logic
@@ -64,9 +64,9 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/getProduct.do")
-	public String getUser( @RequestParam("prodNo") int prodNo , Model model ) throws Exception {
+	public String getProduct( @RequestParam("prodNo") int prodNo , Model model ) throws Exception {
 		
-		System.out.println("/getUser.do");
+		System.out.println("/getProduct.do");
 		//Business Logic
 		Product product = productService.getProduct(prodNo);
 		// Model °ú View ¿¬°á
@@ -76,7 +76,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/updateProductView.do")
-	public String updateUserView( @RequestParam("prodNo") int prodNo , Model model ) throws Exception{
+	public String updateProductView( @RequestParam("prodNo") int prodNo , Model model ) throws Exception{
 
 		System.out.println("/updateProductView.do");
 		//Business Logic
@@ -88,7 +88,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/updateProduct.do")
-	public String updateUser( @ModelAttribute("product") Product product , Model model) throws Exception{
+	public String updateProduct( @ModelAttribute("product") Product product , Model model) throws Exception{
 
 		System.out.println("/updateProduct.do");
 		//Business Logic
@@ -99,7 +99,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/listProduct.do")
-	public String listUser( @ModelAttribute("search") Search search , Model model , HttpServletRequest request) throws Exception{
+	public String listProduct( @ModelAttribute("search") Search search , Model model , HttpServletRequest request) throws Exception{
 		
 		System.out.println("/listProduct.do");
 		
